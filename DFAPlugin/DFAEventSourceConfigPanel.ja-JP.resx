@@ -131,4 +131,7 @@
     <value>音声読み上げにはオーバーレイの設定が必要です。
 ダンジョン名の変数は ${matched} を使用して下さい。</value>
   </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>LINE notify アクセストークン</value>
+  </data>
 </root>

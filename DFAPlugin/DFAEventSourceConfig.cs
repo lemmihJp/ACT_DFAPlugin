@@ -14,6 +14,7 @@ namespace Qitana.DFAPlugin
     {
         public string StructuresURL { get; set; } = "https://qitana.github.io/ACT_DFAPlugin/data/structures.json";
         public string TextToSpeech { get; set; } = "${matched}";
+        public string AccessToken { get; set; } = "";
         public List<Structure> Structures { get; set; } = new List<Structure>();
         
         public class Structure
@@ -69,6 +70,11 @@ namespace Qitana.DFAPlugin
                 if (obj.TryGetValue("TextToSpeech", out JToken textToSpeech))
                 {
                     result.TextToSpeech = textToSpeech.ToString();
+                }
+
+                if (obj.TryGetValue("AccessToken", out JToken accessToken))
+                {
+                    result.AccessToken = accessToken.ToString();
                 }
 
                 if (obj.TryGetValue("Structures", out JToken structures))

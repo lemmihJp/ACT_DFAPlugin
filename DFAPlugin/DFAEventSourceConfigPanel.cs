@@ -35,6 +35,7 @@ namespace Qitana.DFAPlugin
         {
             this.textBox_StructuresURL.Text = config.StructuresURL;
             this.textBox_TTS.Text = config.TextToSpeech;
+            this.textBox_AccessToken.Text = config.AccessToken;
         }
 
         private void MessageReceived(string connection, long epoch, byte[] message)
@@ -57,6 +58,11 @@ namespace Qitana.DFAPlugin
         private void textBox_TTS_TextChanged(object sender, EventArgs e)
         {
             this.config.TextToSpeech = this.textBox_TTS.Text;
+        }
+
+        private void textBox_AccessToken_TextChanged(object sender, EventArgs e)
+        {
+            this.config.AccessToken = this.textBox_AccessToken.Text;
         }
 
 

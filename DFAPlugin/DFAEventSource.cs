@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace Qitana.DFAPlugin
@@ -118,6 +119,10 @@ namespace Qitana.DFAPlugin
             RegisterEventHandler("DFATTS", (msg) =>
             {
                 string text = Config.TextToSpeech.Replace(@"${matched}", msg["text"].ToString());
+                if (!String.IsNullOrEmpty(Config.AccessToken))
+                {
+                    LienNofityPublishMessage(Config.AccessToken, msg["vanillaText"].ToString());
+                }
                 ActGlobals.oFormActMain.TTS(text);
                 return null;
             });
@@ -621,6 +626,16 @@ namespace Qitana.DFAPlugin
         public void LogInfo(string format, params object[] args)
         {
             this.Log(LogLevel.Info, format, args);
+        }
+
+        private async void LienNofityPublishMessage(string token, string message)
+        {
+            using(var client = new HttpClient())
+            {
+                var content = new FormUrlEncodedContent(new Dictionary<string, string> { { "message", message } });
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                await client.PostAsync("https://notify-api.line.me/api/notify", content).ConfigureAwait(false);
+            }
         }
     }
 

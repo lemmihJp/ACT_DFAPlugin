@@ -229,21 +229,23 @@ var dfa = new Vue({
 
           // Call RouletteTTS
           if (!this.ttsCalledState.roulette && newStatus.RouletteCode > 0) {
+            let vanillaText = this.roulettes[newStatus.RouletteCode]
             let text = this.roulettes[newStatus.RouletteCode]
             for (var key in this.phonetics) {
               text = text.replace(key, this.phonetics[key]);
             }
-            window.callOverlayHandler({ call: 'DFATTS', text: text })
+            window.callOverlayHandler({ call: 'DFATTS', text: text, vanillaText: vanillaText })
             this.ttsCalledState.roulette = true;
           }
 
           // Call DungeonTTS
           if (!this.ttsCalledState.dungeon && newStatus.DungeonCode > 0) {
+            let vanillaText = this.dungeons[newStatus.DungeonCode]
             let text = this.dungeons[newStatus.DungeonCode]
             for (var key in this.phonetics) {
               text = text.replace(key, this.phonetics[key]);
             }
-            window.callOverlayHandler({ call: 'DFATTS', text: text })
+            window.callOverlayHandler({ call: 'DFATTS', text: text, vanillaText: vanillaText })
             this.ttsCalledState.dungeon = true;
           }
           

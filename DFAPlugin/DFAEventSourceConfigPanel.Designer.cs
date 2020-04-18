@@ -32,11 +32,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_OpenTraceWindow = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_StructuresURL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_TTS = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox_AccessToken = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,12 +60,19 @@
             // tableLayoutPanel2
             // 
             resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBox_StructuresURL, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.textBox_TTS, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_AccessToken, 1, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
             // 
             // label1
             // 
@@ -92,6 +101,12 @@
             resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
             // 
+            // textBox_AccessToken
+            // 
+            resources.ApplyResources(this.textBox_AccessToken, "textBox_AccessToken");
+            this.textBox_AccessToken.Name = "textBox_AccessToken";
+            this.textBox_AccessToken.TextChanged += new System.EventHandler(this.textBox_AccessToken_TextChanged);
+            // 
             // DFAEventSourceConfigPanel
             // 
             resources.ApplyResources(this, "$this");
@@ -115,5 +130,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_TTS;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox_AccessToken;
     }
 }
