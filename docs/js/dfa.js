@@ -15,7 +15,7 @@ const getDungeonData = new Promise((resolve, reject) => {
       reject();
     }
   }
-  xmlHttpRequest.open('GET', 'data/dungeon.json', true);
+  xmlHttpRequest.open('GET', 'https://qitana.github.io/ACT_DFAPlugin/data/dungeon.json', true);
   xmlHttpRequest.responseType = 'json';
   xmlHttpRequest.send(null);
 });
@@ -35,7 +35,7 @@ const getRouletteData = new Promise((resolve, reject) => {
       reject();
     }
   }
-  xmlHttpRequest.open('GET', 'data/roulette.json', true);
+  xmlHttpRequest.open('GET', 'https://qitana.github.io/ACT_DFAPlugin/data/roulette.json', true);
   xmlHttpRequest.responseType = 'json';
   xmlHttpRequest.send(null);
 });
@@ -55,7 +55,7 @@ const getPhoneticData = new Promise((resolve, reject) => {
       reject();
     }
   }
-  xmlHttpRequest.open('GET', 'data/phonetic.json', true);
+  xmlHttpRequest.open('GET', 'https://qitana.github.io/ACT_DFAPlugin/data/phonetic.json', true);
   xmlHttpRequest.responseType = 'json';
   xmlHttpRequest.send(null);
 });
